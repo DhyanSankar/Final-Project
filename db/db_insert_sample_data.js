@@ -56,6 +56,8 @@ const insert_reviews_sql = `
     `
 
 
-    db.execute(insert_reviews_sql, [1, 1, 1, 10, 'food is GOOD']);
+    db.execute(insert_reviews_sql, [1, 1, 1, 10, 'food is GREAT']);
     
-    db.execute(insert_reviews_sql, [1, 1, 1, 10, 'food is GOOD']);
+    db.execute(insert_reviews_sql, [2, 2, 2, 7, 'food is GOOD']);
+
+    db.execute(insert_reviews_sql, [3, 3, 3, 3, 'food is GARBAGE']);
