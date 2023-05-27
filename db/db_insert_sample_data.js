@@ -76,10 +76,11 @@ const insert_cart_sql = `
     (?, ?, ?);
     `
     db.execute(insert_cart_sql, [1, 1, 1]);
+    db.execute(insert_reviews_sql, [1, 1, 1, 10, 'food is GREAT']);
     
     db.execute(insert_cart_sql, [2, 1, 2]);
 
     db.execute(insert_cart_sql, [3, 2, 3]);
+    db.execute(insert_reviews_sql, [2, 2, 2, 7, 'food is GOOD']);
 
-
-
+    db.execute(insert_reviews_sql, [3, 3, 3, 3, 'food is GARBAGE']);
