@@ -31,39 +31,20 @@
                     <th scope="col">Price</th>
                 </thead>
                 <tbody>
+                    <% for (let i = 0; i < foodlist.length; i++) { %>
                     <tr>
-                        <td>Pizza</td>
-                        <td>Bread covered with tomato sauce and cheese</td>
-                        <td>dairy and tomato</td>
-                        <td>$10</td>
+                        <td><%= foodlist[i].food_name %></td>
+                        <td><%= foodlist[i].food_description %></td>
+                        <td><%= foodlist[i].food_allergens %></td>
+                        <td><%= foodlist[i].food_price %></td>
                         <td>
-                            <a class="btn">
-                                <i class="material-icons right">shopping_cart</i> Buy
+                            <a class="btn-small waves-effect waves-light" href="/restaurants/<%= restaurantlist[i].assignmentId %>">
+                                <i class="material-icons right">edit</i>
+                                Info/Edit
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Burger</td>
-                        <td>Bread with a patty, lettuce, and sause, tomatos, and onions</td>
-                        <td></td>
-                        <td>$8</td>
-                        <td>
-                            <a class="btn">
-                                <i class="material-icons right">shopping_cart</i> Buy
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lasagna</td>
-                        <td>A good description</td>
-                        <td></td>
-                        <td>$12</td>
-                        <td>
-                            <a class="btn">
-                                <i class="material-icons right">shopping_cart</i> Buy
-                            </a>
-                        </td>
-                    </tr>
+                    <% } %>
                 </tbody>
             </table>
 

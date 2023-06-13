@@ -28,20 +28,24 @@
                     <th scope="col">Name</th>
                     <th scope="col">Food Type</th>
                     <th scope="col">Location</th>
-                    <th scope="col">Link</th>
                     <th scope="col">Rating</th>
+                    <th scope="col">Link</th>
                 </thead>
                 <tbody>
+                    <% for (let i = 0; i < restaurantlist.length; i++) { %>
                     <tr>
-                        <td>The best restaurant</td>
-                        <td>Only the best food</td>
-                        <td>The fanciest place known to man</td>
+                        <td><%= restaurantlist[i].restaurant_name %></td>
+                        <td><%= restaurantlist[i].restaurant_food_type %></td>
+                        <td><%= restaurantlist[i].restaurant_location %></td>
+                        <td><%= restaurantlist[i].score %></td>
                         <td>
-                            <a class="btn" href="purchaseItems.html">
-                                <i class="material-icons right">remove_red_eye</i> View Page
+                            <a class="btn-small waves-effect waves-light" href="/restaurants/<%= restaurantlist[i].assignmentId %>">
+                                <i class="material-icons right">edit</i>
+                                Info/Edit
                             </a>
                         </td>
                     </tr>
+                    <% } %>
                 </tbody>
             </table>
         </div>

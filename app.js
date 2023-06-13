@@ -65,10 +65,10 @@ let restaurantsRouter = require("./routes/restaurants.js");
 // let restaurantsRouter = require("./routes/assignments_async_await.js");
 app.use("/restaurants", requiresAuth(), restaurantsRouter);
 
-let subjectsRouter = require("./routes/subjects_callbacks.js");
-// let subjectsRouter = require("./routes/subjects_promise.js");
-// let subjectsRouter = require("./routes/subjects_async_await.js");
-app.use("/subjects", requiresAuth(), subjectsRouter);
+// let subjectsRouter = require("./routes/subjects_callbacks.js");
+// // let subjectsRouter = require("./routes/subjects_promise.js");
+// // let subjectsRouter = require("./routes/subjects_async_await.js");
+// app.use("/subjects", requiresAuth(), subjectsRouter);
 
 
 // start the server
