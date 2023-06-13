@@ -80,3 +80,5 @@ db.execute(insert_cart_sql, [1, 1, 1]);
 db.execute(insert_cart_sql, [2, 1, 2]);
 
 db.execute(insert_cart_sql, [3, 2, 3]);
+
+db.end();
