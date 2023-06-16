@@ -87,38 +87,38 @@ restaurantsRouter.get("/:id", (req, res) => {
 
 // });
 
-// define a route for assignment UPDATE
-const update_assignment_sql = fs.readFileSync(path.join(__dirname, "..",
-    "db", "queries", "crud", "update_assignment.sql"),
-    { encoding: "UTF-8" });
+// // define a route for assignment UPDATE
+// const update_assignment_sql = fs.readFileSync(path.join(__dirname, "..",
+//     "db", "queries", "crud", "update_assignment.sql"),
+//     { encoding: "UTF-8" });
 
-restaurantsRouter.post("/:id", (req, res) => {
-    db.execute(update_assignment_sql, 
-        [req.body.title, req.body.priority, req.body.subject, req.body.dueDate, req.body.description, req.params.id])
-    .then(([results, fields]) => {
-        if (DEBUG) console.log(results);
-        res.redirect(`/assignments/${req.params.id}`);
-    }).catch((error) => {
-        if (DEBUG) console.log(error);
-        res.status(500).send(error); //Internal Server Error
-    });
-});
+// restaurantsRouter.post("/:id", (req, res) => {
+//     db.execute(update_assignment_sql, 
+//         [req.body.title, req.body.priority, req.body.subject, req.body.dueDate, req.body.description, req.params.id])
+//     .then(([results, fields]) => {
+//         if (DEBUG) console.log(results);
+//         res.redirect(`/assignments/${req.params.id}`);
+//     }).catch((error) => {
+//         if (DEBUG) console.log(error);
+//         res.status(500).send(error); //Internal Server Error
+//     });
+// });
 
-// define a route for assignment DELETE
-const delete_assignment_sql = fs.readFileSync(path.join(__dirname, "..",
-    "db", "queries", "crud", "delete_assignment.sql"),
-    { encoding: "UTF-8" });
+// // define a route for assignment DELETE
+// const delete_assignment_sql = fs.readFileSync(path.join(__dirname, "..",
+//     "db", "queries", "crud", "delete_assignment.sql"),
+//     { encoding: "UTF-8" });
 
 
-restaurantsRouter.get("/:id/delete", (req, res) => {
-    db.execute(delete_assignment_sql, [req.params.id, req.oidc.user.sub])
-    .then(([results, fields]) => {
-        if (DEBUG) console.log(results);
-        res.redirect(`/assignments`);
-    }).catch((error) => {
-        if (DEBUG) console.log(error);
-        res.status(500).send(error); //Internal Server Error
-    });
-});
+// restaurantsRouter.get("/:id/delete", (req, res) => {
+//     db.execute(delete_assignment_sql, [req.params.id, req.oidc.user.sub])
+//     .then(([results, fields]) => {
+//         if (DEBUG) console.log(results);
+//         res.redirect(`/assignments`);
+//     }).catch((error) => {
+//         if (DEBUG) console.log(error);
+//         res.status(500).send(error); //Internal Server Error
+//     });
+// });
 
 module.exports = restaurantsRouter;
