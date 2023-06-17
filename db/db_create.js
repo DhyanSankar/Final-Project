@@ -69,6 +69,7 @@ const create_cart_table_sql = `
         purchase_id INT NOT NULL AUTO_INCREMENT,
         user_id INT NOT NULL,
         food_id INT NOT NULL,
+        food_price FLOAT(5) NOT NULL,
         PRIMARY KEY (purchase_id),
         INDEX cartFood_idx (food_id ASC),
         CONSTRAINT cartFood
