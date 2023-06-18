@@ -1,0 +1,31 @@
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><i class="material-icons left">restaurant</i>Restaurants</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="desktop-nav" class="right hide-on-med-and-down">
+                <li><a href="/"><i class="material-icons left">home</i> Home</a></li>
+                <li><a href="/restaurants"><i class="material-icons left">restaurant_menu</i> Restaurants</a></li>
+                <li><a href="/cart"><i class="material-icons left">shopping_cart</i> Cart</a></li>
+                
+                <% if (isLoggedIn) { %>
+                    <li><a href="/profile"><i class="material-icons left">person</i> Hello, <%=user.name%></a> </li>
+                    <li><a href="/logout" class="btn red">Logout</a></li>                        
+                <% } else { %>
+                    <li><a href="/login" class="btn blue">Login</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+    <ul id="mobile-nav" class="sidenav">
+        <li><a href="/"><i class="material-icons left">home</i> Home</a></li>
+        <li><a href="/restaurants"><i class="material-icons left">restaurant_menu</i> restaurants</a></li>
+        <li><a href="/cart"><i class="material-icons left">shopping_cart</i> cart</a></li>
+        <% if (isLoggedIn) { %>
+            <li><a href="/profile"><i class="material-icons left">person</i> Hello, <%=user.name%></a> </li>
+            <li><a href="/logout" class="btn red">Logout</a></li>                        
+        <% } else { %>
+            <li><a href="/login" class="btn blue">Login</a></li>
+        <% } %>
+    </ul>
+</header>
