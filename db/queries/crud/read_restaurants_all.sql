@@ -4,4 +4,4 @@ FROM restaurants
 JOIN reviews
     ON restaurants.restaurant_id = reviews.restaurant_id
 WHERE reviews.restaurant_id = restaurants.restaurant_id
-ORDER BY score DESC
+ORDER BY score DESC 
