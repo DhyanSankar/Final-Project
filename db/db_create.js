@@ -37,6 +37,7 @@ const create_food_table_sql = `
         food_name VARCHAR(63) NOT NULL,
         food_description VARCHAR(255) NULL,
         food_allergens VARCHAR(63) NULL,
+        food_price FLOAT NOT NULL,
         PRIMARY KEY (food_id),
         INDEX foodRestaurant_idx (restaurant_id ASC),
         CONSTRAINT foodRestaurant

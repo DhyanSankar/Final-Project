@@ -33,28 +33,28 @@ db.execute(insert_restaurants_sql, [3, 'Restaurant #3', 'Ice Cream', '555 Marion
 
 const insert_food_sql = `
     INSERT INTO food
-    (food_id, restaurant_id, food_name, food_description, food_allergens)
+    (food_id, restaurant_id, food_name, food_description, food_allergens, food_price)
     VALUES
-    (?, ?, ?, ?, ?);
+    (?, ?, ?, ?, ?, ?);
     `
 
-db.execute(insert_food_sql, [1, 1, 'pizza', 'what\'s better than a pie? a pie WITH CHEESE', 'cheese']);
+db.execute(insert_food_sql, [1, 1, 'pizza', 'what\'s better than a pie? a pie WITH CHEESE', 'cheese', 9.99]);
 
-db.execute(insert_food_sql, [2, 1, 'pasta', 'tastes a little like spaghetti', 'wheat']);
+db.execute(insert_food_sql, [2, 1, 'pasta', 'tastes a little like spaghetti', 'wheat', 12.99]);
 
-db.execute(insert_food_sql, [3, 1, 'spaghetti', 'tastes a little like pasta', 'wheat']);
+db.execute(insert_food_sql, [3, 1, 'spaghetti', 'tastes a little like pasta', 'wheat', 12.99]);
 
-db.execute(insert_food_sql, [4, 2, 'white bread', 'crafted and designed to feed geese', 'wheat']);
+db.execute(insert_food_sql, [4, 2, 'white bread', 'crafted and designed to feed geese', 'wheat', 2.99]);
 
-db.execute(insert_food_sql, [5, 2, 'wheat bread', 'for people who want to think they\'re heathier than the rest', 'wheat']);
+db.execute(insert_food_sql, [5, 2, 'wheat bread', 'for people who want to think they\'re heathier than the rest', 'wheat', 3.99]);
 
-db.execute(insert_food_sql, [6, 2, 'baguette', 'loooong bread', 'wheat']);
+db.execute(insert_food_sql, [6, 2, 'baguette', 'loooong bread', 'wheat', 4.99]);
 
-db.execute(insert_food_sql, [7, 3, 'strawberry ice cream', 'ice cream but it tastes liek strawberries', 'strawberry']);
+db.execute(insert_food_sql, [7, 3, 'strawberry ice cream', 'ice cream but it tastes liek strawberries', 'strawberry', 2.99]);
 
-db.execute(insert_food_sql, [8, 3, 'CHOCOLATE ice cream', 'ice cream but it tastes liek CHOCOLATE', 'chocolate']);
+db.execute(insert_food_sql, [8, 3, 'CHOCOLATE ice cream', 'ice cream but it tastes liek CHOCOLATE', 'chocolate', 2.99]);
     
-db.execute(insert_food_sql, [9, 3, 'vanilla ice cream sandwich', 'ice cream smodged between 2 pieces of chocolate thingies', 'milk']);
+db.execute(insert_food_sql, [9, 3, 'vanilla ice cream sandwich', 'ice cream smodged between 2 pieces of chocolate thingies', 'milk', 2.99]);
 
 const insert_reviews_sql = `
     INSERT INTO reviews
