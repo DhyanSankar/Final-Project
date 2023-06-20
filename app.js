@@ -63,6 +63,9 @@ app.get( "/", ( req, res ) => {
 let restaurantsRouter = require("./routes/restaurants.js");
 app.use("/restaurants", requiresAuth(), restaurantsRouter);
 
+let cartRouter = require("./routes/cart.js");
+app.use("/cart", requiresAuth(), cartRouter);
+
 // start the server
 app.listen( port, () => {
     console.log(`App server listening on ${ port }. (Go to http://localhost:${ port })` );

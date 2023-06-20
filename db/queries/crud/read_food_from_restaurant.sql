@@ -1,5 +1,5 @@
 SELECT 
-    food_name, food_description, food_allergens, food_price
+    food.restaurant_id, food_id, food_name, food_description, food_allergens, ROUND(food_price, 2) as food_price
 FROM food
 JOIN restaurants
     ON food.restaurant_id = restaurants.restaurant_id

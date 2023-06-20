@@ -34,9 +34,9 @@
                         <td><%= foodlist[i].food_allergens %></td>
                         <td><%= foodlist[i].food_price %></td>
                         <td>
-                            <a class="btn-small waves-effect waves-light" href="/restaurants/<%= restaurantlist[i].assignmentId %>">
-                                <i class="material-icons right">edit</i>
-                                Info/Edit
+                            <a class="btn-small waves-effect waves-light" href="/restaurants/<%= foodlist[i].food_id %>/add">
+                                <i class="material-icons right">shopping_cart</i>
+                                Add To Cart
                             </a>
                         </td>
                     </tr>
@@ -44,7 +44,7 @@
                 </tbody>
             </table>
 
-            <a class="btn" href="cart.html">
+            <a class="btn" href="/cart">
                 <i class="material-icons right">shopping_cart</i> View cart
             </a>
 
@@ -54,33 +54,38 @@
                     <th scope="col">Score</th>
                     <th scope="col">Description</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>7/10</td>
-                        <td>pretty good but could have been better</td>
-                    </tr>
-                    <tr>
-                        <td>3/10</td>
-                        <td>very bad, would not go again</td>
-                </tbody>
+                <% for (let i = 0; i < reviewlist.length; i++) { %>
+                <tr>
+                    <td><%= reviewlist[i].review_score %></td>
+                    <td><%= reviewlist[i].review_description %></td>
+                    <!-- <td>
+                        <a class="btn-small waves-effect waves-light" href="/restaurants/">
+                            <i class="material-icons right">edit</i>
+                            Info/Edit
+                        </a>
+                    </td> -->
+                </tr>
+                <% } %>
             </table>
             <h2>Add Review</h2>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s2">
-                            <input id="score" type="text" class="validate">
-                            <label for="score">Score out of 10</label>
-                        </div>
-                        <div class="input-field col s10">
-                            <input id="description" type="text" class="validate">
-                            <label for="description">Description</label>
-                        </div>
-                </form>
-            </div>
-            <a class="btn" href="cart.html">
-                <i class="material-icons right">add</i> Post
-            </a>
+            
+            <form id="addForm" method="post" action="/restaurants/<%= foodlist[0].restaurant_id %>">
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input id="score" type="number" class="validate">
+                        <label for="score">Score out of 10</label>
+                    </div>
+                    <div class="input-field col s10">
+                        <input id="description" type="text" class="validate">
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+
+                <button class="btn waves-effect waves-light" type="submit">
+                    <i class="material-icons right">send</i>
+                    Submit
+                </button>
+            </form>
         </div>
     </div>
 

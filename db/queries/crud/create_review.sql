@@ -1,4 +1,4 @@
 INSERT INTO reviews
-(review_score, review_description)
+(restaurant_id, user_id, review_score, review_description)
 VALUES
-(?, ?);
+(?, ?, ?, ?);
